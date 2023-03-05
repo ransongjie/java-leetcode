@@ -59,7 +59,7 @@ public class Solution7 {
      * - 先问题转换
      * - 再使用双指针反向移动求解
      * - 使用List<List<Integer>>结构存储结果
-     * - 遍历过程中相连的相等元素只使用1个，避免两个三元组对应位置元素相等
+     * - 遍历过程中相连的相等元素只使用最后1个，避免两个三元组对应位置元素相等
      * 
      * @param nums
      * @return
@@ -68,7 +68,8 @@ public class Solution7 {
         Arrays.sort(nums);
         List<List<Integer>> list = new ArrayList<>();
         for (int k = 0; k < nums.length; k++) {
-            // xcrj 相连相等元素只使用最后1个
+            // xcrj 相连相等元素只使用最后1个, 
+            // [k1,i,j] [k2,i,j] k1=k2 三元组重复
             if (k > 0 && nums[k] == nums[k - 1]) {
                 continue;
             }
@@ -80,7 +81,8 @@ public class Solution7 {
                 int sum=nums[i] + nums[j];
                 if (target == sum) {
                     list.add(Arrays.asList(nums[k], nums[i], nums[j]));
-                    // xcrj 相连相等元素只使用第1个
+                    // xcrj 相连相等元素只使用第1个, 
+                    // [k,i1,j] [k,i2,j] i1=i2 三元组重复
                     while (i < j && nums[i] == nums[++i]);
                     while (i < j && nums[j] == nums[--j]);
                 }else if(target>sum){

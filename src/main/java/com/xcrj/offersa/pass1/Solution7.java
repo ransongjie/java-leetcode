@@ -5,8 +5,11 @@ import java.util.*;
 /**
  * 剑指 Offer II 007. 数组中和为 0 的三个数
  * 数组是无序的
- * 给定一个包含 n 个整数的数组nums，判断nums中是否存在三个元素a ，b ，c ，使得a + b + c = 0 ？请找出所有和为 0 且不重复的三元组
- * a + b + c = 0&&a b c都不相同
+ * 给定一个包含 n 个整数的数组nums，
+ * 判断nums中是否存在三个元素a ，b ，c ，使得a + b + c = 0 ？
+ * 请找出所有和为 0 且不重复的三元组
+ * - 数组是无序的
+ * - 所有 a + b + c = 0&&a b c都不相同
  */
 public class Solution7 {
 
@@ -18,7 +21,7 @@ public class Solution7 {
     public List<List<Integer>> threeSum1(int[] nums) {
         // 结果，
         Set<List<Integer>> set = new HashSet<>(3);
-        // 升序排序 上面set？，题目要求结果不重复，例如 -4,-1,-1,0,1，2。[-1,0,1],[-1,0,-1]就是重复的
+        // 升序排序 上面set？，题目要求结果不重复，例如 -4,-1,-1,0,1，2。[-1,0,1],[-1,0,1]就是重复的
         Arrays.sort(nums);
         // 双指针
         for (int k = 0; k < nums.length; k++) {
