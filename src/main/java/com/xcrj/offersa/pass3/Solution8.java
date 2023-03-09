@@ -12,7 +12,7 @@ public class Solution8 {
      * 双指针同向移动
      * 两个while循环夹击出最短子数组
      * - 先j从0开始往右移动，以满足sum>=target
-     * - 在i从0开始往右移动，以满足len最短的 sum>=target
+     * - 在i从0开始往右移动，以满足长度最短的 sum>=target
      * @param target
      * @param nums
      * @return

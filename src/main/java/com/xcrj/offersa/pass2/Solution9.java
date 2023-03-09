@@ -1,7 +1,7 @@
 package com.xcrj.offersa.pass2;
 
 /**
- * 剑指 Offer II 009. 乘积小于K的子数组
+ * 剑指 Offer II 009. 乘积小于k的最短连续子数组的数量
  * - 数组元素乘积小于k
  * - 数组元素连续
  * - 有多少个这样的子数组
